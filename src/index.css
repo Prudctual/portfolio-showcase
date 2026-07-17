@@ -261,38 +261,78 @@ p {
   }
 }
 
-/* Dynamic Accent Variables per Card */
+/* Dynamic Accent Variables & Vibrant Colored Gradients per Card */
 .project-card.agmoney {
   --card-accent: var(--accent-emerald);
-  --card-accent-glow: rgba(16, 185, 129, 0.05);
-  --card-accent-border: rgba(16, 185, 129, 0.25);
-  --card-pattern-opacity: 0.03;
+  --card-accent-glow: rgba(16, 185, 129, 0.25);
+  --card-accent-border: rgba(16, 185, 129, 0.45);
+  --card-pattern-opacity: 0.05;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(6, 95, 70, 0.2));
+  border: 1px solid rgba(16, 185, 129, 0.3);
 }
+.project-card.agmoney:hover {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 95, 70, 0.4));
+  border-color: rgba(16, 185, 129, 0.65);
+  box-shadow: 
+    0 15px 40px rgba(16, 185, 129, 0.35), 
+    0 0 25px rgba(16, 185, 129, 0.2),
+    inset 0 0 15px rgba(16, 185, 129, 0.15);
+}
+
 .project-card.sumersend {
   --card-accent: var(--accent-cyan);
-  --card-accent-glow: rgba(6, 182, 212, 0.05);
-  --card-accent-border: rgba(6, 182, 212, 0.25);
-  --card-pattern-opacity: 0.02;
+  --card-accent-glow: rgba(6, 182, 212, 0.25);
+  --card-accent-border: rgba(6, 182, 212, 0.45);
+  --card-pattern-opacity: 0.04;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(21, 94, 117, 0.2));
+  border: 1px solid rgba(6, 182, 212, 0.3);
 }
+.project-card.sumersend:hover {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(21, 94, 117, 0.4));
+  border-color: rgba(6, 182, 212, 0.65);
+  box-shadow: 
+    0 15px 40px rgba(6, 182, 212, 0.35), 
+    0 0 25px rgba(6, 182, 212, 0.2),
+    inset 0 0 15px rgba(6, 182, 212, 0.15);
+}
+
 .project-card.bank {
   --card-accent: var(--accent-purple);
-  --card-accent-glow: rgba(139, 92, 246, 0.05);
-  --card-accent-border: rgba(139, 92, 246, 0.25);
-  --card-pattern-opacity: 0.03;
+  --card-accent-glow: rgba(139, 92, 246, 0.25);
+  --card-accent-border: rgba(139, 92, 246, 0.45);
+  --card-pattern-opacity: 0.05;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(88, 28, 135, 0.2));
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
+.project-card.bank:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(88, 28, 135, 0.4));
+  border-color: rgba(139, 92, 246, 0.65);
+  box-shadow: 
+    0 15px 40px rgba(139, 92, 246, 0.35), 
+    0 0 25px rgba(139, 92, 246, 0.2),
+    inset 0 0 15px rgba(139, 92, 246, 0.15);
+}
+
 .project-card.sufrah {
   --card-accent: var(--accent-amber);
-  --card-accent-glow: rgba(245, 158, 11, 0.05);
-  --card-accent-border: rgba(245, 158, 11, 0.25);
-  --card-pattern-opacity: 0.03;
+  --card-accent-glow: rgba(245, 158, 11, 0.25);
+  --card-accent-border: rgba(245, 158, 11, 0.45);
+  --card-pattern-opacity: 0.05;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(146, 64, 14, 0.2));
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.project-card.sufrah:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(146, 64, 14, 0.4));
+  border-color: rgba(245, 158, 11, 0.65);
+  box-shadow: 
+    0 15px 40px rgba(245, 158, 11, 0.35), 
+    0 0 25px rgba(245, 158, 11, 0.2),
+    inset 0 0 15px rgba(245, 158, 11, 0.15);
 }
 
 /* Beautiful Premium Cards & Patterns */
 .project-card {
   position: relative;
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-light);
-  border-top: 3px solid var(--card-accent); /* Prominent Color Header Border */
   border-radius: 24px;
   padding: 32px;
   text-decoration: none;
@@ -414,19 +454,25 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: transparent;
+  background: var(--bg-tertiary);
   border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   transition: var(--transition-smooth);
 }
 
+.card-link-btn svg {
+  stroke: currentColor;
+  fill: none;
+}
+
 .card-link-btn:hover {
-  background: var(--bg-tertiary);
+  background: var(--bg-primary);
   color: var(--card-accent);
   border-color: var(--card-accent-border);
+  box-shadow: 0 0 10px var(--card-accent-glow);
 }
 
 .card-link-btn:active {
@@ -780,6 +826,11 @@ p {
   background: var(--bg-tertiary);
   color: var(--text-primary);
   border: 1px solid var(--border-light);
+}
+
+.btn-secondary svg {
+  stroke: currentColor;
+  fill: none;
 }
 
 .btn-secondary:hover {

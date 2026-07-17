@@ -25,16 +25,12 @@ const GithubIcon = ({ className = "w-4 h-4" }: { className?: string }) => (
   </svg>
 );
 
-
 interface Project {
   id: string;
   slug: string;
   title: string;
-  arabicTitle: string;
   subtitle: string;
-  arabicSubtitle: string;
   description: string;
-  arabicDescription: string;
   icon: React.ReactNode;
   class: string;
   tech: string[];
@@ -43,11 +39,8 @@ interface Project {
   stats: { label: string; value: string }[];
   details: {
     overview: string;
-    arabicOverview: string;
     challenges: string[];
-    arabicChallenges: string[];
     architecture: string[];
-    arabicArchitecture: string[];
   };
 }
 
@@ -77,11 +70,8 @@ export default function App() {
       id: '1',
       slug: 'agmoney',
       title: 'Agmoney',
-      arabicTitle: 'إي جي موني',
       subtitle: 'Financial Spend Firewall for AI Agents',
-      arabicSubtitle: 'جدار حماية مالي لوكلاء الذكاء الاصطناعي',
       description: 'A Cloudflare Worker + Hono secure proxy acting as a financial firewall to restrict runaway spend for AI agents. Encrypts provider keys at rest using AES-256-GCM.',
-      arabicDescription: 'بروكسي آمن مبني على Cloudflare Workers و Hono يعمل كجدار حماية مالي للحد من التكاليف المتصاعدة للوكلاء البرمجيين، مع تشفير المفاتيح باستخدام AES-256-GCM.',
       icon: <Shield className="w-6 h-6" />,
       class: 'agmoney',
       tech: ['Cloudflare Workers', 'Hono', 'Supabase', 'Web Crypto API', 'AES-256-GCM'],
@@ -94,28 +84,16 @@ export default function App() {
       ],
       details: {
         overview: 'Agmoney serves as a proxy firewall between AI agents and upstream LLM providers (e.g. OpenAI). It prevents rogue loops and uncontrolled spending by enforcing strict budgets dynamically, stored securely inside Supabase database instances.',
-        arabicOverview: 'يعمل مشروع إي جي موني كبروكسي وسيط وجدار حماية بين وكلاء الذكاء الاصطناعي ومزودي النماذج اللغوية (مثل OpenAI). يمنع التكرار اللانهائي والصرف غير المحسوب من خلال فرض قيود ميزانية مرنة ومحكمة مخزنة بشكل آمن في قاعدة بيانات Supabase.',
         challenges: [
           'Implemented a secure cryptographic vault utilizing user-specific salts (PBKDF2) to decrypt API keys ephemerally in Worker memory.',
           'Built custom stream-decoding parsers to inspect tokens in real-time server-sent events (SSE) and calculate billing.',
           'Created fail-closed authorization flows preventing any data leakages or runaway requests if database connectivity drops.'
-        ],
-        arabicChallenges: [
-          'تطوير خزنة تشفير آمنة تعتمد على أملاح خاصة بكل مستخدم (PBKDF2) لفك تشفير المفاتيح بشكل مؤقت داخل ذاكرة الـ Worker.',
-          'بناء معالجات مخصصة لتحليل حزم البث المباشر (SSE) لحظياً وحساب استهلاك التوكينات وتكلفتها بدقة.',
-          'تصميم نظام تحقق مغلق (Fail-Closed) يمنع معالجة أي طلبات في حال فقدان الاتصال بقاعدة البيانات لضمان عدم تجاوز الميزانية.'
         ],
         architecture: [
           'Edge Computing Proxy (Hono Framework)',
           'Web Crypto API for cryptographic operations',
           'Supabase Realtime for instant budget updates',
           'Ephemerally decrypted Master Keys'
-        ],
-        arabicArchitecture: [
-          'بروكسي حوسبة حافة (إطار عمل Hono)',
-          'مستشعرات Web Crypto API لمعالجة التشفير بأداء عالٍ',
-          'تحديثات ميزانية لحظية عبر Supabase Realtime',
-          'فك تشفير مؤقت وسريع للمفاتيح الرئيسية دون حفظها مكشوفة'
         ]
       }
     },
@@ -123,11 +101,8 @@ export default function App() {
       id: '2',
       slug: 'sumersend',
       title: 'SumerSend',
-      arabicTitle: 'سومر سيند',
       subtitle: 'Visual Messaging Gateway & Transactional Automation',
-      arabicSubtitle: 'بوابة مراسلات مرئية وتدفقات مالية مؤتمتة',
       description: 'An advanced visual workspace automating customer messaging workflows, integrating local Iraqi mobile payment gateways (Zain Cash, AsiaHawala) with cryptographic signature validation.',
-      arabicDescription: 'مساحة عمل بصرية متطورة لأتمتة تدفقات مراسلة العملاء، تدعم بوابات الدفع العراقية المحلية (زين كاش، آسيا حوالة) مع تحقق صارم من التواقيع الرقمية.',
       icon: <MessageSquare className="w-6 h-6" />,
       class: 'sumersend',
       tech: ['Express', 'React', 'Zain Cash API', 'HMAC SHA-256', 'BullMQ', 'Redis'],
@@ -140,28 +115,16 @@ export default function App() {
       ],
       details: {
         overview: 'SumerSend provides visual flow builders to orchestrate WhatsApp campaigns while securely handling transactional state machines. It integrates Zain Cash ZainPay and AsiaHawala APIs to reconcile payments with atomic precision.',
-        arabicOverview: 'يوفر نظام سومر سيند لوحة تحكم بصرية لبناء سيناريوهات تفاعل تلقائي عبر الواتساب مع إدارة آمنة ومحكمة لحالات العمليات المالية، وربطها المباشر ببوابات زين كاش وآسيا حوالة لتسوية الدفعات بدقة متناهية.',
         challenges: [
           'Engineered state reconciliation guards to protect payment webhooks against double-spending and replay attacks.',
           'Hardened Supabase database schema to resolve critical Row Level Security (RLS) bypasses and prevent JWT context leakages.',
           'Implemented background task queues using BullMQ and Redis to manage high-throughput messaging campaigns smoothly.'
-        ],
-        arabicChallenges: [
-          'تصميم نظام مطابقة حالات الحركات المالية لمنع العمليات المكررة (Double-Spend) وحماية الـ Webhooks من هجمات الإعادة (Replay Attacks).',
-          'تحصين قواعد بيانات Supabase وحل ثغرات تخطي نظام الأمان (RLS) لمنع تسريب بيانات مستندات JWT للعملاء.',
-          'إدارة طوابير المهام الخلفية بالاعتماد على BullMQ و Redis لمعالجة الحمل العالي للمراسلات دون توقف.'
         ],
         architecture: [
           'Stateful Transaction Reconciliation Engine',
           'Flow-based Interactive Visual Builder (React Canvas)',
           'Redis-backed Message Queuing System',
           'HMAC SHA-256 signature verification'
-        ],
-        arabicArchitecture: [
-          'محرك تسوية الحركات المالية وإدارة الحالة المستمرة',
-          'مطور تدفقات بصري تفاعلي (React Canvas)',
-          'نظام طوابير رسائل مدعوم بـ Redis',
-          'نظام تحقق من التواقيع الرقمية باستخدام HMAC SHA-256'
         ]
       }
     },
@@ -169,11 +132,8 @@ export default function App() {
       id: '3',
       slug: 'bank-of-agents',
       title: 'Bank of Agents',
-      arabicTitle: 'مصرف الوكلاء',
       subtitle: 'Neobanking Infrastructure for Autonomous AI Agents',
-      arabicSubtitle: 'بنية تحتية مالية رقمية لوكلاء الذكاء الاصطناعي',
       description: 'A dedicated neobanking prototype giving AI agents their own wallets, enabling them to make payments, manage transactions, and execute approval flows.',
-      arabicDescription: 'نموذج بنكي متكامل يمنح وكلاء الذكاء الاصطناعي محافظ رقمية خاصة بهم لإجراء الدفعات المالية، وإدارة المعاملات، وتشغيل مسارات موافقة خاضعة للرقابة البشرية.',
       icon: <Building2 className="w-6 h-6" />,
       class: 'bank',
       tech: ['React', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'TypeScript'],
@@ -186,28 +146,16 @@ export default function App() {
       ],
       details: {
         overview: 'Bank of Agents provides the financial plumbing for agentic workflows. Agents authenticate using secure custom headers, check their credit balances, query transaction limits, and queue payments that require human permission.',
-        arabicOverview: 'يوفر مصرف الوكلاء البنية الأساسية للمعاملات المالية لوكلاء الذكاء الاصطناعي. يصادق الوكلاء باستخدام ترويسات برمجية مخصصة للتحقق من الأرصدة، والاستعلام عن حدود الصرف، وجدولة الدفعات التي تتطلب تأكيداً بشرياً.',
         challenges: [
           'Designed dynamic transaction rules checking daily spending bounds and per-transaction limits in real-time.',
           'Built human-in-the-loop (HITL) approval interfaces with secure tokenized links, ensuring agents cannot self-approve over-budget requests.',
           'Created highly scalable ledger structures managing account relationships and multi-agent wallets with complete relational integrity.'
-        ],
-        arabicChallenges: [
-          'تصميم محرك ديناميكي يفحص حدود الصرف اليومية وحد العملية الواحدة بشكل لحظي قبل تمرير المعاملات.',
-          'بناء واجهات موافقة تفاعلية للمستخدم البشري بروابط آمنة، تضمن عدم قيام الوكلاء باعتماد طلبات خارج نطاق ميزانيتهم.',
-          'تطوير قاعدة بيانات نقدية مرنة لإدارة علاقات الحسابات والمحافظ المتعددة للوكلاء مع ضمان سلامة البيانات الترابطية بالكامل.'
         ],
         architecture: [
           'Prisma ORM with structured transactional locks',
           'Role-Based Express API validation layers',
           'Human-in-the-Loop (HITL) approval queues',
           'Dynamic spending limit rules engine'
-        ],
-        arabicArchitecture: [
-          'طبقة بيانات Prisma ORM مع أقفال حركات مهيكلة',
-          'طبقات مصادقة وصلاحيات متطورة عبر Express API',
-          'طوابير مراجعة وتأكيد من قبل المنسق البشري',
-          'محرك قواعد لتحديد سقوف الإنفاق الديناميكية للعملاء'
         ]
       }
     },
@@ -215,11 +163,8 @@ export default function App() {
       id: '4',
       slug: 'sufrah',
       title: 'Sufrah',
-      arabicTitle: 'سفرة',
       subtitle: 'On-Demand Local Food-Delivery Marketplace',
-      arabicSubtitle: 'سوق إلكتروني متكامل لتوصيل الطعام محلياً',
       description: 'A multi-vendor marketplace application connecting local restaurants with delivery drivers and customers, incorporating localized payment gateways.',
-      arabicDescription: 'منصة تسوق رقمية متعددة البائعين تربط المطاعم المحلية بسائقين التوصيل والزبائن، مدمجة بنظام تسوية ودفع فوري محلي.',
       icon: <Layers className="w-6 h-6" />,
       class: 'sufrah',
       tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Zain Cash API'],
@@ -232,28 +177,16 @@ export default function App() {
       ],
       details: {
         overview: 'Sufrah is a production-focused local delivery system. It manages menus, order workflows, dispatch queues, and customer wallets with mobile-centric designs tailored for local Iraqi market requirements.',
-        arabicOverview: 'يمثل مشروع سفرة نظام توصيل طعام محلي متكامل، يدعم إدارة قوائم الأطعمة، تدفق الطلبات، طوابير التوزيع على السائقين، ومحافظ العملاء الرقمية المصممة للهواتف لتلائم متطلبات السوق العراقي.',
         challenges: [
           'Integrated Zain Cash mobile payment webhook reconciliation for instant order confirmation.',
           'Built flexible multi-tenant structures allowing vendors to manage menus, custom options, and pricing independently.',
           'Designed mobile-first responsive interfaces optimized for slow network connections and caching strategies.'
-        ],
-        arabicChallenges: [
-          'دمج واجهات وبوابات دفع زين كاش لتسوية وتأكيد الطلبات تلقائياً وفوراً.',
-          'تطوير هيكلية مرنة متعددة المستأجرين (Multi-tenant) تتيح لأصحاب المطاعم التحكم بالقوائم والأسعار بشكل مستقل.',
-          'تصميم واجهات متجاوبة مخصصة للهواتف ومحسنة للعمل بأقل سرعات الإنترنت المتاحة مع تفعيل خوارزميات التخزين المؤقت.'
         ],
         architecture: [
           'RESTful Backend Services (Node.js/Express)',
           'Relational database design (PostgreSQL)',
           'Secure mobile gateway checkout flows',
           'Tailored modular state management'
-        ],
-        arabicArchitecture: [
-          'خدمات خلفية برمجية متكاملة (Node.js/Express)',
-          'تصميم قاعدة بيانات علائقية محكمة (PostgreSQL)',
-          'تدفقات دفع وحساب آمنة مخصصة للموبايل',
-          'إدارة حالة نمطية ومرنة تلائم توسع النظام'
         ]
       }
     }
@@ -283,12 +216,12 @@ export default function App() {
           <div className="hero-tag font-mono">
             <Terminal className="w-3.5 h-3.5 mr-2 inline" /> CREATIVE SOFTWARE & SECURITY RESEARCH
           </div>
-          <h1 className="arabic-heading">
-            واجهة عرض الأعمال <br />
-            <span className="text-zinc-500">والحلول البرمجية الفائقة</span>
+          <h1>
+            Showcase of Works <br />
+            <span className="text-zinc-500">and Advanced Engineering Solutions</span>
           </h1>
           <p className="hero-subtitle">
-            نطور بنية تحتية برمجية آمنة، بوابات مراسلات ذكية، وأنظمة دفع تلقائية مصممة لتلبية متطلبات الأسواق الرقمية واقتصاد الذكاء الاصطناعي.
+            Designing secure neobanking APIs, transaction automation engines, and edge financial firewalls for the agentic economy and digital payment spaces.
           </p>
 
           <div className="hero-stats">
@@ -311,8 +244,8 @@ export default function App() {
       {/* Projects Grid */}
       <section className="projects-section">
         <div className="container">
-          <div className="section-title arabic-heading">
-            <Layers className="w-5 h-5 text-zinc-400" /> المشاريع الأساسية
+          <div className="section-title">
+            <Layers className="w-5 h-5 text-zinc-400" /> Core Projects
           </div>
 
           <div className="projects-grid">
@@ -339,12 +272,12 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="card-body text-right">
-                    <div className="project-title arabic-heading justify-end">
-                      {project.arabicTitle} <span className="text-sm font-mono text-zinc-500 font-normal">/ {project.title}</span>
+                  <div className="card-body">
+                    <div className="project-title">
+                      {project.title}
                     </div>
-                    <div className="project-subtitle arabic-heading">{project.arabicSubtitle}</div>
-                    <p className="project-desc">{project.arabicDescription}</p>
+                    <div className="project-subtitle">{project.subtitle}</div>
+                    <p className="project-desc">{project.description}</p>
                   </div>
                 </div>
 
@@ -367,11 +300,11 @@ export default function App() {
             <div className="creator-avatar">
               JK
             </div>
-            <div className="creator-info text-right">
-              <h3 className="creator-name arabic-heading">جاسم كريم بدوي</h3>
+            <div className="creator-info">
+              <h3 className="creator-name">Jasim Kareem Badawi</h3>
               <div className="creator-role font-mono">Software & Security Engineer</div>
               <p className="creator-bio">
-                مطور برمجيات وباحث أمني متخصص في بناء البنى التحتية البرمجية المعقدة، بوابات الدفع الرقمية، وأدوات الحماية المالية لوكلاء الذكاء الاصطناعي. أركز على تقديم تجارب مستخدم عالية الأداء ومصممة بدقة لتلائم البيئات التشغيلية والإنتاجية الصارمة.
+                Software engineer and security researcher focused on building resilient financial plumbing, payment gateways, and guardrail proxies for autonomous AI systems. Dedicated to delivering high-performance, polished developer experiences tailored for production environments.
               </p>
               <div className="creator-actions">
                 <a 
@@ -385,9 +318,9 @@ export default function App() {
                 <a 
                   href="/Jasim_Kareem_Badawi_Resume.pdf" 
                   download 
-                  className="btn btn-primary arabic-heading"
+                  className="btn btn-primary"
                 >
-                  <Download className="w-4 h-4" /> تحميل السيرة الذاتية
+                  <Download className="w-4 h-4" /> Download Resume
                 </a>
               </div>
             </div>
@@ -418,18 +351,18 @@ export default function App() {
               <X className="w-4 h-4" />
             </button>
 
-            <div className="modal-header text-right">
-              <div className="modal-title-area justify-end">
-                <div className="modal-header-text">
-                  <h2 className="arabic-heading">{activeProject.arabicTitle}</h2>
-                  <div className="text-sm font-mono text-zinc-500">{activeProject.title} &mdash; {activeProject.subtitle}</div>
-                </div>
+            <div className="modal-header">
+              <div className="modal-title-area">
                 <div className="modal-icon-container">
                   {activeProject.icon}
                 </div>
+                <div className="modal-header-text">
+                  <h2>{activeProject.title}</h2>
+                  <div className="text-sm font-mono text-zinc-500">{activeProject.subtitle}</div>
+                </div>
               </div>
 
-              <div className="modal-link-bar justify-end">
+              <div className="modal-link-bar">
                 <a href={activeProject.githubUrl} target="_blank" rel="noopener noreferrer" className="modal-link-btn">
                   <GithubIcon className="w-4 h-4" /> Source Code
                 </a>
@@ -439,24 +372,24 @@ export default function App() {
               </div>
             </div>
 
-            <div className="modal-body text-right">
+            <div className="modal-body">
               <div className="modal-section">
-                <div className="modal-section-title arabic-heading">نظرة عامة على المشروع</div>
-                <p className="modal-text">{activeProject.details.arabicOverview}</p>
+                <div className="modal-section-title">Overview</div>
+                <p className="modal-text">{activeProject.details.overview}</p>
               </div>
 
               <div className="modal-section">
-                <div className="modal-section-title arabic-heading">التحديات البرمجية والحلول</div>
+                <div className="modal-section-title">Engineering Challenges & Solutions</div>
                 <ul className={`modal-bullets ${activeProject.class}-bullets`}>
-                  {activeProject.details.arabicChallenges.map((challenge, i) => (
+                  {activeProject.details.challenges.map((challenge, i) => (
                     <li key={i}>{challenge}</li>
                   ))}
                 </ul>
               </div>
 
               <div className="modal-section">
-                <div className="modal-section-title arabic-heading">البنية والهندسة البرمجية</div>
-                <div className="flex flex-wrap gap-2 justify-end mt-2">
+                <div className="modal-section-title">System Architecture & Tech</div>
+                <div className="flex flex-wrap gap-2 mt-2">
                   {activeProject.tech.map((tag, i) => (
                     <span key={i} className="tech-tag">{tag}</span>
                   ))}

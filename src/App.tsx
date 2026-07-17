@@ -215,63 +215,65 @@ export default function App() {
             </div>
             <div className="walking-cat">
               <svg viewBox="0 0 32 24" className="cat-svg">
-                {/* Tail */}
-                <path d="M 6,13 C 4,13 1,9 2.5,5 C 3.2,3.5 4,4.2 3.5,6 C 2.5,8.5 3.5,11 6,11 Z" fill="#f97316" className="cat-tail" />
-                <path d="M 6,12 C 4.5,12 2,10 3,7.5 C 3.5,6.5 4,7 3.6,8 C 2.8,10 3.8,11.5 6,11.5 Z" fill="#ea580c" className="cat-tail-stripe" />
+                {/* Tail (Smooth S-curve) */}
+                <path d="M 6,12.5 C 4,12.5 1.5,9.5 2,5.5 C 2.3,3.5 3.3,3.5 3,5.5 C 2.5,7.8 3.5,10.8 6,10.8 Z" fill="#f97316" className="cat-tail" />
+                <path d="M 5.8,11.5 C 4.3,11.5 2,9.2 2.5,6.5 C 2.8,5.2 3.3,5.2 3,6.2 C 2.5,8 3.5,9.8 5.8,9.8 Z" fill="#ea580c" className="cat-tail-stripe" />
 
-                {/* Back Legs (underneath body) */}
+                {/* Back Left Leg (Inner, Darker Ginger) */}
                 <g className="cat-leg cat-leg-back-inner">
-                  <rect x="7.5" y="15" width="2" height="5" rx="1" fill="#ea580c" />
-                  <rect x="7.5" y="19" width="2" height="1.5" rx="0.5" fill="#ffffff" />
+                  <path d="M 7.5,13.5 C 7.5,13.5 6.5,15 6.5,17 C 6.5,19 7,20 8,20 C 8.5,20 8.5,19 8.5,17.5 C 8.5,15.5 9,14 9,13.5 Z" fill="#ea580c" />
+                  <path d="M 6.5,19 C 6.5,19.6 7.2,20.2 8,20.2 C 8.5,20.2 8.8,19.6 8.8,19 C 8.8,18.8 6.5,18.8 6.5,19 Z" fill="#ffffff" />
                 </g>
-                
+
+                {/* Front Left Leg (Inner, Darker Ginger) */}
                 <g className="cat-leg cat-leg-front-inner">
-                  <rect x="18" y="15" width="2" height="5" rx="1" fill="#ea580c" />
-                  <rect x="18" y="19" width="2" height="1.5" rx="0.5" fill="#ffffff" />
+                  <path d="M 18,13.5 C 18,13.5 17.2,15 17.2,17 C 17.2,19 17.5,20 18.5,20 C 19,20 19,19 19,17.5 C 19,15.5 19.5,14 19.5,13.5 Z" fill="#ea580c" />
+                  <path d="M 17.2,19 C 17.2,19.6 17.9,20.2 18.5,20.2 C 19,20.2 19.3,19.6 19.3,19 C 19.3,18.8 17.2,18.8 17.2,19 Z" fill="#ffffff" />
                 </g>
 
-                {/* Body */}
-                <path d="M 6,10 C 6,10 8,8 12,8 C 17,8 20,11 20,13.5 C 20,15.5 17,17 12,17 C 8,17 6,14.5 6,10 Z" fill="#f97316" className="cat-body" />
-                <path d="M 9,17 C 11,17 13,15.5 15,15.5 C 16,15.5 17,16 17,17 Z" fill="#ffffff" className="cat-belly" />
+                {/* Body (Refined Organic Curve with Tabby Stripes) */}
+                <path d="M 5.8,10.5 C 5.8,10.5 7.8,7.5 12.5,7.5 C 17.5,7.5 20.5,10.5 20.5,13 C 20.5,15 17.5,16.5 12.5,16.5 C 7.8,16.5 5.8,14 5.8,10.5 Z" fill="#f97316" className="cat-body" />
+                <path d="M 9.5,16.5 C 11.5,16.5 13.5,15 15.5,15 C 17,15 18,15.5 18,16.5 Z" fill="#ffffff" className="cat-belly" />
                 
-                {/* Stripes */}
-                <path d="M 9,9 L 8,12 M 12,8.5 L 11.5,12.5 M 15,9 L 14.5,13" stroke="#ea580c" strokeWidth="1.2" strokeLinecap="round" />
+                {/* Striping (Cute Curved M-stripes on Back) */}
+                <path d="M 9.5,8.5 C 9.2,10.2 9,11.5 8.2,12.5 M 12.8,8 C 12.5,10.2 12,12 11.2,13 M 15.5,8.2 C 15.2,10.5 14.8,12 13.8,13.2" stroke="#ea580c" strokeWidth="1.2" strokeLinecap="round" fill="none" />
 
-                {/* Front Legs (in foreground) */}
+                {/* Back Right Leg (Outer, Bright Ginger) */}
                 <g className="cat-leg cat-leg-back">
-                  <rect x="9.5" y="15" width="2" height="5" rx="1" fill="#f97316" />
-                  <rect x="9.5" y="19" width="2" height="1.5" rx="0.5" fill="#ffffff" />
+                  <path d="M 9.5,13.5 C 9.5,13.5 8.5,15 8.5,17 C 8.5,19 9,20 10,20 C 10.5,20 10.5,19 10.5,17.5 C 10.5,15.5 11,14 11,13.5 Z" fill="#f97316" />
+                  <path d="M 8.5,19 C 8.5,19.6 9.2,20.2 10,20.2 C 10.5,20.2 10.8,19.6 10.8,19 C 10.8,18.8 8.5,18.8 8.5,19 Z" fill="#ffffff" />
                 </g>
-                
+
+                {/* Front Right Leg (Outer, Bright Ginger) */}
                 <g className="cat-leg cat-leg-front">
-                  <rect x="16" y="15" width="2" height="5" rx="1" fill="#f97316" />
-                  <rect x="16" y="19" width="2" height="1.5" rx="0.5" fill="#ffffff" />
+                  <path d="M 16,13.5 C 16,13.5 15.2,15 15.2,17 C 15.2,19 15.5,20 16.5,20 C 17,20 17,19 17,17.5 C 17,15.5 17.5,14 17.5,13.5 Z" fill="#f97316" />
+                  <path d="M 15.2,19 C 15.2,19.6 15.9,20.2 16.5,20.2 C 17,20.2 17.3,19.6 17.3,19 C 17.3,18.8 15.2,18.8 15.2,19 Z" fill="#ffffff" />
                 </g>
 
-                {/* Head & Neck */}
-                <path d="M 17,11 C 18,9.5 19.5,8 22,8 C 24.5,8 26,10 26,12 C 26,14 24,15.5 21,15.5 C 18.5,15.5 17.5,13 17,11 Z" fill="#f97316" className="cat-head" />
+                {/* Head with Cheeks & Neck */}
+                <path d="M 17,11.5 C 17.5,10 19,8 21.8,8 C 24.8,8 26.2,10 26.2,12 C 26.2,14.2 24.2,15.2 21.8,15.2 C 19,15.2 17.8,13 17,11.5 Z" fill="#f97316" className="cat-head" />
                 
-                {/* Ears */}
-                <polygon points="20.5,8.5 20,3 22,5.5" fill="#f97316" />
-                <polygon points="20.5,8.5 20.3,4.5 21.5,6" fill="#fda4af" />
+                {/* Ears with Curves */}
+                <path d="M 20,8 C 19.5,6.5 19.2,3 21,3.5 C 21.8,4.2 21.8,6 21.8,8 Z" fill="#f97316" />
+                <path d="M 20.3,7.5 C 19.9,6.5 19.7,4.5 20.7,4.8 C 21.2,5.2 21.2,6.5 21.2,7.5 Z" fill="#fda4af" />
                 
-                <polygon points="23.5,8.5 24.5,3 24.8,6" fill="#f97316" />
-                <polygon points="23.8,8.5 24.3,4.8 24.5,6.5" fill="#fda4af" />
+                <path d="M 23.5,8 C 24,6.5 24.8,3 25.5,3.5 C 25.2,4.8 25,6.5 25,8 Z" fill="#f97316" />
+                <path d="M 23.8,7.5 C 24.1,6.5 24.6,4.5 25,4.8 C 24.8,5.5 24.7,6.5 24.7,7.5 Z" fill="#fda4af" />
 
-                {/* Eyes */}
-                <ellipse cx="23.5" cy="10" rx="1" ry="1.5" fill="#84cc16" />
-                <line x1="23.5" y1="8.8" x2="23.5" y2="11.2" stroke="#000000" strokeWidth="0.6" />
+                {/* Cute Cat Eyes (Big and Slanted) */}
+                <ellipse cx="23.2" cy="10.2" rx="1.2" ry="1.7" fill="#84cc16" />
+                <line x1="23.2" y1="8.8" x2="23.2" y2="11.6" stroke="#000000" strokeWidth="0.8" />
                 
-                <ellipse cx="25.5" cy="10" rx="1" ry="1.5" fill="#84cc16" />
-                <line x1="25.5" y1="8.8" x2="25.5" y2="11.2" stroke="#000000" strokeWidth="0.6" />
+                <ellipse cx="25.5" cy="10.2" rx="1.2" ry="1.7" fill="#84cc16" />
+                <line x1="25.5" y1="8.8" x2="25.5" y2="11.6" stroke="#000000" strokeWidth="0.8" />
 
-                {/* Whiskers pad & nose */}
-                <circle cx="24.5" cy="12" r="1.5" fill="#fef08a" opacity="0.8" />
-                <circle cx="25.5" cy="12" r="1.5" fill="#fef08a" opacity="0.8" />
-                <polygon points="24.8,11.5 25.2,11.5 25,12" fill="#f43f5e" />
+                {/* Whiskers Pad and Pink Nose */}
+                <circle cx="24.1" cy="12" r="1.5" fill="#fef08a" opacity="0.8" />
+                <circle cx="25.1" cy="12" r="1.5" fill="#fef08a" opacity="0.8" />
+                <polygon points="24.4,11.5 24.8,11.5 24.6,12" fill="#f43f5e" />
 
                 {/* Whiskers */}
-                <path d="M 23.5,12 L 21,11 M 23.5,12.5 L 20.5,12.5 M 26.5,12 L 29,11 M 26.5,12.5 L 29.5,12.5" stroke="#ffffff" strokeWidth="0.6" opacity="0.8" />
+                <path d="M 23,12 L 20,11 M 23,12.5 L 19.5,12.5 M 26.2,12 L 29.2,11 M 26.2,12.5 L 29.7,12.5" stroke="#ffffff" strokeWidth="0.6" opacity="0.8" />
               </svg>
             </div>
           </div>

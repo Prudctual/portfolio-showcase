@@ -229,10 +229,6 @@ export default function App() {
               <div className="stat-val">4</div>
               <div className="stat-lbl">Fintech Gateways</div>
             </div>
-            <div className="stat-item">
-              <div className="stat-val">Edge</div>
-              <div className="stat-lbl">Cloudflare / Hono</div>
-            </div>
           </div>
         </div>
       </section>

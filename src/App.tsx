@@ -65,6 +65,22 @@ export default function App() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Parallax Scroll Effect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const hero = document.querySelector('.hero') as HTMLElement;
+      if (hero) {
+        // Slow down the hero movement (parallax) and fade it out
+        hero.style.transform = `translateY(${scrolled * 0.35}px)`;
+        hero.style.opacity = `${Math.max(1 - scrolled / 500, 0)}`;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const projects: Project[] = [
     {
       id: '1',

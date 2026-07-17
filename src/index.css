@@ -157,29 +157,13 @@ p {
 
 /* Hero Section with Parallax Reveal Scroll Effect */
 .hero {
-  position: sticky;
-  top: 72px; /* Height of the sticky header */
+  position: relative;
   z-index: 1;
-  padding: 100px 0 80px 0;
+  padding: 120px 0 160px 0; /* Extra bottom padding so projects section overlaps it cleanly */
   text-align: center;
   transform-origin: center center;
   animation: itemFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes hero-scroll-fade {
-  to {
-    opacity: 0.1;
-    transform: scale(0.93) translateY(-40px);
-    filter: blur(3px);
-  }
-}
-
-@supports (animation-timeline: scroll()) {
-  .hero {
-    animation: itemFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both, hero-scroll-fade linear both;
-    animation-timeline: none, scroll();
-    animation-range: none, exit 0% exit 80%;
-  }
+  will-change: transform, opacity;
 }
 
 .hero-tag {
@@ -260,7 +244,7 @@ p {
   border-radius: 40px 40px 0 0;
   box-shadow: 0 -30px 60px rgba(0, 0, 0, 0.98);
   padding: 80px 0;
-  margin-top: 40px;
+  margin-top: -120px;
 }
 
 .section-title {

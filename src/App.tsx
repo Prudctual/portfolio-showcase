@@ -399,7 +399,7 @@ export default function App() {
       <footer className="footer">
         <div className="container footer-container">
           <div>
-            &copy; {new Date().getFullYear()} ai & things. All rights reserved.
+            &copy; {new Date().getFullYear()} جميع الحقوق محفوظة لجاسم كريم.
           </div>
           <div className="footer-links">
             <a href="https://github.com/Prudctual" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>

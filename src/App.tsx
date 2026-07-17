@@ -223,15 +223,15 @@ export default function App() {
           <div className="hero-stats">
             <div className="stat-item">
               <div className="stat-val">4</div>
-              <div className="stat-lbl">Projects</div>
+              <div className="stat-lbl">Systems Deployed</div>
             </div>
             <div className="stat-item">
-              <div className="stat-val">100%</div>
-              <div className="stat-lbl">Secure</div>
+              <div className="stat-val">4</div>
+              <div className="stat-lbl">Fintech Gateways</div>
             </div>
             <div className="stat-item">
-              <div className="stat-val">3</div>
-              <div className="stat-lbl">Subdomains</div>
+              <div className="stat-val">Edge</div>
+              <div className="stat-lbl">Cloudflare / Hono</div>
             </div>
           </div>
         </div>

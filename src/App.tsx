@@ -209,7 +209,7 @@ export default function App() {
             <div className="walking-cat">
               <svg viewBox="0 0 24 24" className="cat-svg">
                 {/* Tail */}
-                <path d="M5,14 C3,14 1,11 2,7 C2.5,5 3.5,6 3,8 C2.5,10 3.5,12 5,12 Z" fill="currentColor" />
+                <path d="M5,14 C3,14 1,11 2,7 C2.5,5 3.5,6 3,8 C2.5,10 3.5,12 5,12 Z" fill="currentColor" className="cat-tail" />
                 {/* Body */}
                 <rect x="5" y="10" width="11" height="6" rx="3" fill="currentColor" />
                 {/* Neck & Head */}

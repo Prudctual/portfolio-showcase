@@ -205,6 +205,26 @@ export default function App() {
           <a href="#" className="logo">
             Jasim Kareem
           </a>
+          <div className="cat-track">
+            <div className="walking-cat">
+              <svg viewBox="0 0 24 24" className="cat-svg">
+                {/* Tail */}
+                <path d="M5,14 C3,14 1,11 2,7 C2.5,5 3.5,6 3,8 C2.5,10 3.5,12 5,12 Z" fill="currentColor" />
+                {/* Body */}
+                <rect x="5" y="10" width="11" height="6" rx="3" fill="currentColor" />
+                {/* Neck & Head */}
+                <circle cx="15" cy="8" r="3.5" fill="currentColor" />
+                {/* Ears */}
+                <polygon points="12.5,6 14,2 14.5,5" fill="currentColor" />
+                <polygon points="14.5,5 16,2 17.5,6" fill="currentColor" />
+                {/* Legs */}
+                <rect x="6" y="15" width="1.5" height="4" rx="0.5" fill="currentColor" className="cat-leg cat-leg-back" />
+                <rect x="8.5" y="15" width="1.5" height="4" rx="0.5" fill="currentColor" className="cat-leg cat-leg-back-inner" />
+                <rect x="11.5" y="15" width="1.5" height="4" rx="0.5" fill="currentColor" className="cat-leg cat-leg-front" />
+                <rect x="14" y="15" width="1.5" height="4" rx="0.5" fill="currentColor" className="cat-leg cat-leg-front-inner" />
+              </svg>
+            </div>
+          </div>
           <nav className="header-nav">
             <a href="#about" className="nav-link">About</a>
             <a href="#works" className="nav-link">Works</a>

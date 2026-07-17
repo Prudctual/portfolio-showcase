@@ -205,6 +205,11 @@ export default function App() {
           <a href="#" className="logo">
             ai & things <span className="logo-accent">// showcase</span>
           </a>
+          <nav className="header-nav">
+            <a href="#about" className="nav-link">About</a>
+            <a href="#works" className="nav-link">Works</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </nav>
         </div>
       </header>
 
@@ -236,7 +241,7 @@ export default function App() {
       </section>
 
       {/* Projects Grid */}
-      <section className="projects-section">
+      <section id="works" className="projects-section">
         <div className="container">
           <div className="section-title">
             <Layers className="w-5 h-5 text-zinc-400" /> Core Projects
@@ -288,7 +293,7 @@ export default function App() {
       </section>
 
       {/* Creator Profile Section */}
-      <section className="creator-section">
+      <section id="about" className="creator-section">
         <div className="container">
           <div className="creator-card">
             <div className="creator-avatar">
@@ -323,7 +328,7 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
+      <footer id="contact" className="footer">
         <div className="container footer-container">
           <div>
             &copy; {new Date().getFullYear()} جميع الحقوق محفوظة لجاسم كريم.

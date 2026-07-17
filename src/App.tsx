@@ -206,13 +206,6 @@ export default function App() {
             Jasim Kareem
           </a>
           <div className="cat-track">
-            <div className="toy-ball">
-              <svg viewBox="0 0 16 16" className="ball-svg">
-                <circle cx="8" cy="8" r="7" fill="#8b5cf6" stroke="#c084fc" strokeWidth="1.2" />
-                <path d="M 3,5 C 5,8 5,10 3,12 M 13,5 C 11,8 11,10 13,12" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" fill="none" />
-                <circle cx="8" cy="8" r="2.2" fill="#fda4af" />
-              </svg>
-            </div>
             <div className="walking-cat">
               <svg viewBox="0 0 32 24" className="cat-svg">
                 {/* Tail (Smooth S-curve) */}

@@ -127,6 +127,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -194,13 +195,14 @@ p {
 
 /* Walking Cat in Header track */
 .cat-track {
-  flex-grow: 1;
-  position: relative;
-  height: 24px;
-  margin: 0 40px;
-  overflow: visible;
+  position: absolute;
+  left: 24px;  /* Align with container padding */
+  right: 24px; /* Align with container padding */
+  bottom: 0;
+  top: 0;
   pointer-events: none;
-  z-index: 5;
+  z-index: 10;
+  overflow: visible;
 }
 
 @media (max-width: 820px) {
@@ -250,302 +252,268 @@ p {
   animation: tail-wiggle-cycle 18s infinite ease-in-out;
 }
 
-/* Playful Toy Ball styling */
-.toy-ball {
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  bottom: -2px; /* Sits on the header floor line */
-  z-index: 4;
-  animation: ball-movement 18s infinite cubic-bezier(0.25, 1, 0.4, 1);
-  filter: drop-shadow(0 1.5px 3px rgba(0,0,0,0.5));
-}
-
-.ball-svg {
-  width: 100%;
-  height: 100%;
-}
-
-@keyframes ball-movement {
-  /* Ball sits at 45% of track waiting for cat to pounce */
-  0%, 34.5% {
-    left: 45%;
-    transform: rotate(0deg);
-  }
-  /* Cat lands on ball at 35% and hits it. Ball rolls and spins to 75% */
-  39% {
-    left: 75%;
-    transform: rotate(540deg);
-  }
-  48% {
-    left: 75%;
-    transform: rotate(540deg);
-  }
-  /* Cat turns around and kicks it back at 49%. Ball rolls back to 45% */
-  53% {
-    left: 45%;
-    transform: rotate(180deg);
-  }
-  100% {
-    left: 45%;
-    transform: rotate(180deg);
-  }
-}
-
 /* Leg Swing Cycle - Swings only when moving, stretches in jump, still when paused */
 @keyframes leg-walk-cycle {
-  /* 0% to 15% (Walking): swing back and forth */
-  0% { transform: rotate(-22deg); }
-  3.75% { transform: rotate(22deg); }
-  7.5% { transform: rotate(-22deg); }
-  11.25% { transform: rotate(22deg); }
-  15% { transform: rotate(0deg); }
+  /* 0% to 3% (Paused at logo base): still */
+  0%, 3% { transform: rotate(0deg); }
   
-  /* 15% to 23% (Sniffing/Paused): legs still */
-  23% { transform: rotate(0deg); }
+  /* 3% to 9% (Leap Up onto name): back legs stretch back */
+  3.1% { transform: rotate(-10deg); }
+  4.5%, 8.5% { transform: rotate(-45deg); }
+  9% { transform: rotate(0deg); }
   
-  /* 26% to 31% (Crouching): legs bent/tucked in slightly */
-  26%, 31% { transform: rotate(-12deg); }
+  /* 9% to 20% (Walking on text): swing */
+  11.75% { transform: rotate(-22deg); }
+  14.5% { transform: rotate(22deg); }
+  17.25% { transform: rotate(-22deg); }
+  20% { transform: rotate(0deg); }
   
-  /* 32% to 35% (Leaping): back legs stretch backward */
-  32.5%, 34% { transform: rotate(-45deg); }
-  35% { transform: rotate(0deg); } /* Lands */
+  /* 20% to 28% (Sitting/Paused on text): still */
+  28% { transform: rotate(0deg); }
   
-  /* 35% to 40% (Paused after landing): still */
-  40% { transform: rotate(0deg); }
+  /* 28% to 34% (Leap Down from name): back legs stretch back */
+  28.1% { transform: rotate(-10deg); }
+  29.5%, 33.5% { transform: rotate(-45deg); }
+  34% { transform: rotate(0deg); }
   
-  /* 40% to 50% (Stretching/Paused): legs still */
+  /* 34% to 37% (Landing): still */
+  37% { transform: rotate(0deg); }
+  
+  /* 37% to 50% (Walking to middle): swing */
+  40.25% { transform: rotate(-22deg); }
+  43.5% { transform: rotate(22deg); }
+  46.75% { transform: rotate(-22deg); }
   50% { transform: rotate(0deg); }
   
-  /* 50% to 65% (Sneaking/Walking): swing */
-  53.75% { transform: rotate(-22deg); }
-  57.5% { transform: rotate(22deg); }
-  61.25% { transform: rotate(-22deg); }
-  65% { transform: rotate(0deg); }
+  /* 50% to 55% (Sniffing): still */
+  55% { transform: rotate(0deg); }
   
-  /* 65% to 71% (Looking behind/Paused): legs still */
-  71% { transform: rotate(0deg); }
+  /* 55% to 75% (Walking to right): swing */
+  59% { transform: rotate(-22deg); }
+  63% { transform: rotate(22deg); }
+  67% { transform: rotate(-22deg); }
+  71% { transform: rotate(22deg); }
+  75% { transform: rotate(0deg); }
   
-  /* 71% to 90% (Trotting/Running): fast swing */
-  74.8% { transform: rotate(-25deg); }
-  78.6% { transform: rotate(25deg); }
-  82.4% { transform: rotate(-25deg); }
-  86.2% { transform: rotate(25deg); }
-  90% { transform: rotate(0deg); }
+  /* 75% to 84% (Stretching/Turning): still */
+  84% { transform: rotate(0deg); }
   
-  /* 90% to 100% (Sitting/Paused): legs still */
+  /* 84% to 98% (Running back): fast swing */
+  86.8% { transform: rotate(-25deg); }
+  89.6% { transform: rotate(25deg); }
+  92.4% { transform: rotate(-25deg); }
+  95.2% { transform: rotate(25deg); }
+  98% { transform: rotate(0deg); }
+  
+  /* 98% to 100%: still */
   100% { transform: rotate(0deg); }
 }
 
 @keyframes leg-walk-cycle-reverse {
-  /* 0% to 15% (Walking): swing in reverse */
-  0% { transform: rotate(22deg); }
-  3.75% { transform: rotate(-22deg); }
-  7.5% { transform: rotate(22deg); }
-  11.25% { transform: rotate(-22deg); }
-  15% { transform: rotate(0deg); }
+  /* 0% to 3% (Paused): still */
+  0%, 3% { transform: rotate(0deg); }
   
-  /* 15% to 23% (Sniffing/Paused): legs still */
-  23% { transform: rotate(0deg); }
+  /* 3% to 9% (Leap Up): front legs stretch forward */
+  3.1% { transform: rotate(10deg); }
+  4.5%, 8.5% { transform: rotate(45deg); }
+  9% { transform: rotate(0deg); }
   
-  /* 26% to 31% (Crouching): legs bent/tucked in slightly */
-  26%, 31% { transform: rotate(12deg); }
+  /* 9% to 20% (Walking on text): swing */
+  11.75% { transform: rotate(22deg); }
+  14.5% { transform: rotate(-22deg); }
+  17.25% { transform: rotate(22deg); }
+  20% { transform: rotate(0deg); }
   
-  /* 32% to 35% (Leaping): front legs stretch forward */
-  32.5%, 34% { transform: rotate(45deg); }
-  35% { transform: rotate(0deg); } /* Lands */
+  /* 20% to 28% (Sitting/Paused): still */
+  28% { transform: rotate(0deg); }
   
-  /* 35% to 40% (Paused after landing): still */
-  40% { transform: rotate(0deg); }
+  /* 28% to 34% (Leap Down): front legs stretch forward */
+  28.1% { transform: rotate(10deg); }
+  29.5%, 33.5% { transform: rotate(45deg); }
+  34% { transform: rotate(0deg); }
   
-  /* 40% to 50% (Stretching/Paused): legs still */
+  /* 34% to 37% (Landing): still */
+  37% { transform: rotate(0deg); }
+  
+  /* 37% to 50% (Walking to middle): swing */
+  40.25% { transform: rotate(22deg); }
+  43.5% { transform: rotate(-22deg); }
+  46.75% { transform: rotate(22deg); }
   50% { transform: rotate(0deg); }
   
-  /* 50% to 65% (Sneaking/Walking): swing */
-  53.75% { transform: rotate(22deg); }
-  57.5% { transform: rotate(-22deg); }
-  61.25% { transform: rotate(22deg); }
-  65% { transform: rotate(0deg); }
+  /* 50% to 55% (Sniffing): still */
+  55% { transform: rotate(0deg); }
   
-  /* 65% to 71% (Looking behind/Paused): legs still */
-  71% { transform: rotate(0deg); }
+  /* 55% to 75% (Walking to right): swing */
+  59% { transform: rotate(22deg); }
+  63% { transform: rotate(-22deg); }
+  67% { transform: rotate(22deg); }
+  71% { transform: rotate(-22deg); }
+  75% { transform: rotate(0deg); }
   
-  /* 71% to 90% (Trotting/Running): fast swing */
-  74.8% { transform: rotate(25deg); }
-  78.6% { transform: rotate(-25deg); }
-  82.4% { transform: rotate(25deg); }
-  86.2% { transform: rotate(-25deg); }
-  90% { transform: rotate(0deg); }
+  /* 75% to 84% (Stretching/Turning): still */
+  84% { transform: rotate(0deg); }
   
-  /* 90% to 100% (Sitting/Paused): legs still */
+  /* 84% to 98% (Running back): fast swing */
+  86.8% { transform: rotate(25deg); }
+  89.6% { transform: rotate(-25deg); }
+  92.4% { transform: rotate(25deg); }
+  95.2% { transform: rotate(-25deg); }
+  98% { transform: rotate(0deg); }
+  
+  /* 98% to 100%: still */
   100% { transform: rotate(0deg); }
 }
 
 /* Tail Wiggle Cycle - wiggles when walking/running, reacts to pounces and poses */
 @keyframes tail-wiggle-cycle {
-  /* 0% to 15% (Walking): wiggle tail */
-  0%, 15% { transform: rotate(5deg); }
-  3%, 9% { transform: rotate(-5deg); }
-  6%, 12% { transform: rotate(15deg); }
+  0%, 3% { transform: rotate(-5deg); }
   
-  /* 15% to 23% (Sniffing): tail low and cautious */
-  15%, 23% { transform: rotate(-10deg); }
+  /* Leap Up */
+  4.5%, 8.5% { transform: rotate(-5deg); }
   
-  /* 26% to 31% (Butt wiggle before jump): twitching fast in preparation */
-  26% { transform: rotate(15deg); }
-  27.5% { transform: rotate(-5deg); }
-  29% { transform: rotate(20deg); }
-  30.5% { transform: rotate(-10deg); }
+  /* Walk on name */
+  9%, 20% { transform: rotate(5deg); }
+  12%, 18% { transform: rotate(15deg); }
+  15% { transform: rotate(-5deg); }
   
-  /* 32% to 35% (Leaping): tail straight back for flying balance */
-  32%, 34.5% { transform: rotate(-5deg); }
+  /* Sitting on name */
+  20%, 28% { transform: rotate(-25deg); }
   
-  /* 35% to 39% (Landing): happy landing wiggles */
-  35% { transform: rotate(15deg); }
-  37% { transform: rotate(-5deg); }
-  39% { transform: rotate(10deg); }
+  /* Leap Down */
+  29.5%, 33.5% { transform: rotate(-5deg); }
   
-  /* 40% to 50% (Stretching): tail points straight up! */
-  40%, 47% { transform: rotate(35deg); }
+  /* Landing */
+  34% { transform: rotate(15deg); }
+  35.5% { transform: rotate(-10deg); }
+  37% { transform: rotate(10deg); }
   
-  /* 50% to 65% (Sneaking): tail low and alert */
-  50%, 65% { transform: rotate(-15deg); }
+  /* Walk to middle */
+  37%, 50% { transform: rotate(5deg); }
+  41%, 47% { transform: rotate(15deg); }
+  44% { transform: rotate(-5deg); }
   
-  /* 65% to 71% (Looking behind): tail twitching */
-  67% { transform: rotate(10deg); }
-  70% { transform: rotate(-5deg); }
+  /* Sniffing */
+  50%, 55% { transform: rotate(-12deg); }
   
-  /* 71% to 90% (Running): tail high and fast wiggles */
-  71%, 90% { transform: rotate(25deg); }
-  75%, 83% { transform: rotate(10deg); }
-  79%, 87% { transform: rotate(30deg); }
+  /* Walk to right */
+  55%, 75% { transform: rotate(5deg); }
+  59%, 67% { transform: rotate(15deg); }
+  63%, 71% { transform: rotate(-5deg); }
   
-  /* 90% to 100% (Sitting): tail wrapped cozy */
-  90%, 100% { transform: rotate(-25deg); }
+  /* Stretching */
+  75%, 84% { transform: rotate(35deg); }
+  
+  /* Running back */
+  84%, 98% { transform: rotate(25deg); }
+  87.5%, 94.5% { transform: rotate(10deg); }
+  91% { transform: rotate(30deg); }
+  
+  /* Still */
+  100% { transform: rotate(5deg); }
 }
 
-/* Realistic Cat Patrol Motion Timeline with Crouching & Leaping Pounces */
+/* Realistic Cat Patrol Motion Timeline with climbing logo text */
 @keyframes cat-patrol {
-  /* Walk from Left to 30% of track */
+  /* 0% to 3%: Paused at logo base (facing left) */
   0% {
-    left: 0%;
-    transform: scaleX(1) translateY(0);
+    left: 115px;
+    transform: scaleX(-1) translateY(0);
   }
-  15% {
-    left: 30%;
-    transform: scaleX(1) translateY(0);
+  3% {
+    left: 115px;
+    transform: scaleX(-1) translateY(3px) scaleY(0.8); /* Crouch */
   }
-  /* Pause and Sniff the ground (translateY down, slight head-tilt rotation) */
-  17% {
-    left: 30%;
-    transform: scaleX(1) translateY(2px) rotate(4deg);
+  
+  /* 3% to 9%: The Jump UP onto logo text! */
+  6% {
+    left: 70px;
+    transform: scaleX(-1) translateY(-28px) rotate(15deg); /* Apex of leap */
   }
+  9% {
+    left: 30px;
+    transform: scaleX(-1) translateY(-22px) rotate(0deg); /* Land on top of text */
+  }
+  
+  /* 9% to 20%: Walk along top of text (leftward) */
   20% {
-    left: 30%;
-    transform: scaleX(1) translateY(2px) rotate(4deg);
+    left: 5px;
+    transform: scaleX(-1) translateY(-22px);
   }
-  23% {
-    left: 30%;
-    transform: scaleX(1) translateY(0);
+  
+  /* 20% to 28%: Sit down cozy on top of the left edge of name */
+  22% {
+    left: 5px;
+    transform: scaleX(-1) translateY(-19px) scaleY(0.7);
   }
-  /* Spots red laser dot! Crouches low and wiggles butt/body preparing to pounce */
   26% {
-    left: 30%;
-    transform: scaleX(1) translateY(3px) scaleY(0.8);
+    left: 5px;
+    transform: scaleX(-1) translateY(-19px) scaleY(0.7);
   }
-  28.5% {
-    left: 30%;
-    transform: scaleX(1) translateY(3px) scaleY(0.8) skewX(-5deg);
+  28% {
+    left: 5px;
+    transform: scaleX(1) translateY(-22px); /* Stand up, turn face right */
+  }
+  
+  /* 28% to 34%: Jump DOWN from text onto floor */
+  29% {
+    left: 5px;
+    transform: scaleX(1) translateY(-20px) scaleY(0.8); /* Prep jump down */
   }
   31% {
-    left: 30%;
-    transform: scaleX(1) translateY(4px) scaleY(0.75);
+    left: 60px;
+    transform: scaleX(1) translateY(-28px) rotate(-15deg); /* Apex down */
   }
-  /* The Pounce Leap! Jumps in high arc to land at 75% */
-  32.5% {
-    left: 45%;
-    transform: scaleX(1) translateY(-14px) rotate(-15deg);
+  34% {
+    left: 120px;
+    transform: scaleX(1) translateY(0) scaleY(0.8) rotate(5deg); /* Land on floor */
   }
-  33.8% {
-    left: 60%;
-    transform: scaleX(1) translateY(-12px) rotate(-5deg);
-  }
-  35% {
-    left: 75%;
-    transform: scaleX(1) translateY(0) scaleY(0.8) rotate(10deg); /* Lands! */
-  }
-  /* Landing balance, tail twitches, stands up */
   37% {
-    left: 75%;
-    transform: scaleX(1) translateY(1px) scaleY(0.85);
-  }
-  39% {
-    left: 75%;
+    left: 120px;
     transform: scaleX(1) translateY(0);
   }
-  /* Walk to the right side (92%) */
-  43% {
-    left: 92%;
+  
+  /* Walk to the middle floor */
+  50% {
+    left: 50%;
     transform: scaleX(1) translateY(0);
   }
-  /* Pause and Stretch back (scaleY stretch and negative translateY) */
-  45% {
-    left: 92%;
+  /* Pause and Sniff ground */
+  52% {
+    left: 50%;
+    transform: scaleX(1) translateY(2px) rotate(4deg);
+  }
+  55% {
+    left: 50%;
+    transform: scaleX(1) translateY(0);
+  }
+  /* Walk to the right side near nav links */
+  75% {
+    left: calc(100% - 250px);
+    transform: scaleX(1) translateY(0);
+  }
+  /* Stretch back */
+  78% {
+    left: calc(100% - 250px);
     transform: scaleX(1) scaleY(1.35) translateY(-3px);
   }
-  48% {
-    left: 92%;
+  82% {
+    left: calc(100% - 250px);
     transform: scaleX(1) translateY(0);
   }
-  /* Turn around (flip facing left) */
-  49% {
-    left: 92%;
+  /* Turn face left */
+  84% {
+    left: calc(100% - 250px);
     transform: scaleX(-1) translateY(0);
   }
-  /* Stalk/cringe crawl back to 55% */
-  50% {
-    left: 92%;
-    transform: scaleX(-1) translateY(0);
-  }
-  65% {
-    left: 55%;
-    transform: scaleX(-1) translateY(2px); /* Crawling low */
-  }
-  /* Stop and look behind itself (flip face back right) */
-  67% {
-    left: 55%;
-    transform: scaleX(1) translateY(0);
-  }
-  69% {
-    left: 55%;
-    transform: scaleX(1) translateY(0);
-  }
-  /* Turn face back left and trot/run back to left side */
-  70% {
-    left: 55%;
-    transform: scaleX(-1) translateY(0);
-  }
-  90% {
-    left: 0%;
-    transform: scaleX(-1) translateY(0);
-  }
-  /* Sit down cozy at the left logo (scaleY flat, translateY down) */
-  92% {
-    left: 0%;
-    transform: scaleX(-1) translateY(0);
-  }
-  95% {
-    left: 0%;
-    transform: scaleX(-1) scaleY(0.7) translateY(3px);
-  }
+  /* Run/trot fast back to logo base */
   98% {
-    left: 0%;
+    left: 115px;
     transform: scaleX(-1) translateY(0);
   }
-  /* Flip facing right to repeat loop */
   100% {
-    left: 0%;
-    transform: scaleX(1) translateY(0);
+    left: 115px;
+    transform: scaleX(-1) translateY(0);
   }
 }
 

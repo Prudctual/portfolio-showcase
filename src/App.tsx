@@ -296,12 +296,28 @@ export default function App() {
       <section id="about" className="creator-section">
         <div className="container">
           <div className="creator-card">
-            <div className="creator-avatar">
-              JK
+            <div className="creator-avatar-container">
+              <div className="creator-avatar-glow" />
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="creator-avatar-svg">
+                <circle cx="50" cy="50" r="48" fill="url(#avatar-grad)" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                <path d="M50 25C36.19 25 25 36.19 25 50C25 63.81 36.19 75 50 75C63.81 75 75 63.81 75 50C75 36.19 63.81 25 50 25ZM50 70C38.97 70 30 61.03 30 50C30 38.97 38.97 30 50 30C61.03 30 70 38.97 70 50C70 61.03 61.03 70 50 70Z" fill="var(--accent-cyan)" />
+                <path d="M50 35C41.72 35 35 41.72 35 50C35 58.28 41.72 65 50 65C58.28 65 65 58.28 65 50C65 41.72 58.28 35 50 35Z" fill="url(#avatar-grad-inner)" opacity="0.8"/>
+                <path d="M44 46L48 50L56 42" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="avatar-grad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#141416" />
+                    <stop offset="1" stopColor="#09090b" />
+                  </linearGradient>
+                  <linearGradient id="avatar-grad-inner" x1="35" y1="35" x2="65" y2="65" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="var(--accent-cyan)" stopOpacity="0.4"/>
+                    <stop offset="1" stopColor="var(--accent-purple)" stopOpacity="0.1"/>
+                  </linearGradient>
+                </defs>
+              </svg>
             </div>
             <div className="creator-info">
               <h3 className="creator-name">Jasim Kareem Badawi</h3>
-              <div className="creator-role font-mono">Software & Security Engineer</div>
+              <div className="creator-role font-mono">SOFTWARE & SECURITY ENGINEER</div>
               <p className="creator-bio">
                 Software engineer and security researcher focused on building resilient financial plumbing, payment gateways, and guardrail proxies for autonomous AI systems. Dedicated to delivering high-performance, polished developer experiences tailored for production environments.
               </p>

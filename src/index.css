@@ -281,12 +281,48 @@ p {
   border: 1px solid rgba(16, 185, 129, 0.4);
 }
 .project-card.agmoney:hover {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(6, 95, 70, 0.55));
-  border-color: rgba(16, 185, 129, 0.75);
+  background: #a7f3d0 !important;
+  color: #064e3b !important;
+  border-color: #34d399 !important;
   box-shadow: 
-    0 15px 40px rgba(16, 185, 129, 0.4), 
-    0 0 25px rgba(16, 185, 129, 0.25),
-    inset 0 0 15px rgba(16, 185, 129, 0.2);
+    0 20px 45px rgba(16, 185, 129, 0.35), 
+    0 0 25px rgba(16, 185, 129, 0.2);
+}
+.project-card.agmoney:hover .project-title {
+  color: #064e3b !important;
+}
+.project-card.agmoney:hover .project-subtitle {
+  color: #047857 !important;
+}
+.project-card.agmoney:hover .project-desc {
+  color: #065f46 !important;
+}
+.project-card.agmoney:hover .tech-tag {
+  background: rgba(4, 120, 87, 0.1) !important;
+  border-color: rgba(4, 120, 87, 0.25) !important;
+  color: #047857 !important;
+}
+.project-card.agmoney:hover .card-icon-container {
+  background: rgba(6, 78, 59, 0.1) !important;
+  border-color: rgba(6, 78, 59, 0.2) !important;
+  color: #064e3b !important;
+}
+.project-card.agmoney:hover .card-link-btn {
+  background: rgba(6, 78, 59, 0.1) !important;
+  border-color: rgba(6, 78, 59, 0.25) !important;
+  color: #064e3b !important;
+}
+.project-card.agmoney:hover .card-link-btn svg {
+  stroke: #064e3b !important;
+}
+.project-card.agmoney:hover .card-link-btn:hover {
+  background: #064e3b !important;
+  color: #a7f3d0 !important;
+  border-color: #064e3b !important;
+  box-shadow: 0 0 10px rgba(6, 78, 59, 0.3) !important;
+}
+.project-card.agmoney:hover .card-link-btn:hover svg {
+  stroke: #a7f3d0 !important;
 }
 .project-card.agmoney .card-icon-container {
   color: var(--accent-emerald);
@@ -308,12 +344,48 @@ p {
   border: 1px solid rgba(6, 182, 212, 0.4);
 }
 .project-card.sumersend:hover {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.28), rgba(21, 94, 117, 0.55));
-  border-color: rgba(6, 182, 212, 0.75);
+  background: #c5f2f7 !important;
+  color: #083344 !important;
+  border-color: #67e8f9 !important;
   box-shadow: 
-    0 15px 40px rgba(6, 182, 212, 0.4), 
-    0 0 25px rgba(6, 182, 212, 0.25),
-    inset 0 0 15px rgba(6, 182, 212, 0.2);
+    0 20px 45px rgba(6, 182, 212, 0.35), 
+    0 0 25px rgba(6, 182, 212, 0.2);
+}
+.project-card.sumersend:hover .project-title {
+  color: #083344 !important;
+}
+.project-card.sumersend:hover .project-subtitle {
+  color: #036978 !important;
+}
+.project-card.sumersend:hover .project-desc {
+  color: #155e75 !important;
+}
+.project-card.sumersend:hover .tech-tag {
+  background: rgba(3, 105, 120, 0.1) !important;
+  border-color: rgba(3, 105, 120, 0.25) !important;
+  color: #036978 !important;
+}
+.project-card.sumersend:hover .card-icon-container {
+  background: rgba(8, 51, 68, 0.1) !important;
+  border-color: rgba(8, 51, 68, 0.2) !important;
+  color: #083344 !important;
+}
+.project-card.sumersend:hover .card-link-btn {
+  background: rgba(8, 51, 68, 0.1) !important;
+  border-color: rgba(8, 51, 68, 0.25) !important;
+  color: #083344 !important;
+}
+.project-card.sumersend:hover .card-link-btn svg {
+  stroke: #083344 !important;
+}
+.project-card.sumersend:hover .card-link-btn:hover {
+  background: #083344 !important;
+  color: #c5f2f7 !important;
+  border-color: #083344 !important;
+  box-shadow: 0 0 10px rgba(8, 51, 68, 0.3) !important;
+}
+.project-card.sumersend:hover .card-link-btn:hover svg {
+  stroke: #c5f2f7 !important;
 }
 .project-card.sumersend .card-icon-container {
   color: var(--accent-cyan);
@@ -335,12 +407,48 @@ p {
   border: 1px solid rgba(139, 92, 246, 0.4);
 }
 .project-card.bank:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.28), rgba(88, 28, 135, 0.55));
-  border-color: rgba(139, 92, 246, 0.75);
+  background: #e9d5ff !important;
+  color: #3b0764 !important;
+  border-color: #c084fc !important;
   box-shadow: 
-    0 15px 40px rgba(139, 92, 246, 0.4), 
-    0 0 25px rgba(139, 92, 246, 0.25),
-    inset 0 0 15px rgba(139, 92, 246, 0.2);
+    0 20px 45px rgba(139, 92, 246, 0.35), 
+    0 0 25px rgba(139, 92, 246, 0.2);
+}
+.project-card.bank:hover .project-title {
+  color: #3b0764 !important;
+}
+.project-card.bank:hover .project-subtitle {
+  color: #6d28d9 !important;
+}
+.project-card.bank:hover .project-desc {
+  color: #581c87 !important;
+}
+.project-card.bank:hover .tech-tag {
+  background: rgba(109, 40, 217, 0.1) !important;
+  border-color: rgba(109, 40, 217, 0.25) !important;
+  color: #6d28d9 !important;
+}
+.project-card.bank:hover .card-icon-container {
+  background: rgba(59, 7, 100, 0.1) !important;
+  border-color: rgba(59, 7, 100, 0.2) !important;
+  color: #3b0764 !important;
+}
+.project-card.bank:hover .card-link-btn {
+  background: rgba(59, 7, 100, 0.1) !important;
+  border-color: rgba(59, 7, 100, 0.25) !important;
+  color: #3b0764 !important;
+}
+.project-card.bank:hover .card-link-btn svg {
+  stroke: #3b0764 !important;
+}
+.project-card.bank:hover .card-link-btn:hover {
+  background: #3b0764 !important;
+  color: #e9d5ff !important;
+  border-color: #3b0764 !important;
+  box-shadow: 0 0 10px rgba(59, 7, 100, 0.3) !important;
+}
+.project-card.bank:hover .card-link-btn:hover svg {
+  stroke: #e9d5ff !important;
 }
 .project-card.bank .card-icon-container {
   color: var(--accent-purple);
@@ -362,12 +470,48 @@ p {
   border: 1px solid rgba(245, 158, 11, 0.4);
 }
 .project-card.sufrah:hover {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.28), rgba(146, 64, 14, 0.55));
-  border-color: rgba(245, 158, 11, 0.75);
+  background: #fde68a !important;
+  color: #451a03 !important;
+  border-color: #fcd34d !important;
   box-shadow: 
-    0 15px 40px rgba(245, 158, 11, 0.4), 
-    0 0 25px rgba(245, 158, 11, 0.25),
-    inset 0 0 15px rgba(245, 158, 11, 0.2);
+    0 20px 45px rgba(245, 158, 11, 0.35), 
+    0 0 25px rgba(245, 158, 11, 0.2);
+}
+.project-card.sufrah:hover .project-title {
+  color: #451a03 !important;
+}
+.project-card.sufrah:hover .project-subtitle {
+  color: #b45309 !important;
+}
+.project-card.sufrah:hover .project-desc {
+  color: #78350f !important;
+}
+.project-card.sufrah:hover .tech-tag {
+  background: rgba(180, 83, 9, 0.1) !important;
+  border-color: rgba(180, 83, 9, 0.25) !important;
+  color: #b45309 !important;
+}
+.project-card.sufrah:hover .card-icon-container {
+  background: rgba(69, 26, 3, 0.1) !important;
+  border-color: rgba(69, 26, 3, 0.2) !important;
+  color: #451a03 !important;
+}
+.project-card.sufrah:hover .card-link-btn {
+  background: rgba(69, 26, 3, 0.1) !important;
+  border-color: rgba(69, 26, 3, 0.25) !important;
+  color: #451a03 !important;
+}
+.project-card.sufrah:hover .card-link-btn svg {
+  stroke: #451a03 !important;
+}
+.project-card.sufrah:hover .card-link-btn:hover {
+  background: #451a03 !important;
+  color: #fde68a !important;
+  border-color: #451a03 !important;
+  box-shadow: 0 0 10px rgba(69, 26, 3, 0.3) !important;
+}
+.project-card.sufrah:hover .card-link-btn:hover svg {
+  stroke: #fde68a !important;
 }
 .project-card.sufrah .card-icon-container {
   color: var(--accent-amber);

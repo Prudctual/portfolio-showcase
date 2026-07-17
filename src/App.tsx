@@ -203,7 +203,7 @@ export default function App() {
       <header className="header">
         <div className="container header-container">
           <a href="#" className="logo">
-            ai & things <span className="logo-accent">// showcase</span>
+            Jasim Kareem
           </a>
           <nav className="header-nav">
             <a href="#about" className="nav-link">About</a>

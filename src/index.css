@@ -274,70 +274,110 @@ p {
 /* Dynamic Accent Variables & Vibrant Colored Gradients per Card */
 .project-card.agmoney {
   --card-accent: var(--accent-emerald);
-  --card-accent-glow: rgba(16, 185, 129, 0.25);
-  --card-accent-border: rgba(16, 185, 129, 0.45);
-  --card-pattern-opacity: 0.05;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(6, 95, 70, 0.2));
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  --card-accent-glow: rgba(16, 185, 129, 0.3);
+  --card-accent-border: rgba(16, 185, 129, 0.55);
+  --card-pattern-opacity: 0.06;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(6, 95, 70, 0.3));
+  border: 1px solid rgba(16, 185, 129, 0.4);
 }
 .project-card.agmoney:hover {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(6, 95, 70, 0.4));
-  border-color: rgba(16, 185, 129, 0.65);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(6, 95, 70, 0.55));
+  border-color: rgba(16, 185, 129, 0.75);
   box-shadow: 
-    0 15px 40px rgba(16, 185, 129, 0.35), 
-    0 0 25px rgba(16, 185, 129, 0.2),
-    inset 0 0 15px rgba(16, 185, 129, 0.15);
+    0 15px 40px rgba(16, 185, 129, 0.4), 
+    0 0 25px rgba(16, 185, 129, 0.25),
+    inset 0 0 15px rgba(16, 185, 129, 0.2);
+}
+.project-card.agmoney .card-icon-container {
+  color: var(--accent-emerald);
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.1);
+}
+.project-card.agmoney .tech-tag {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #a7f3d0;
 }
 
 .project-card.sumersend {
   --card-accent: var(--accent-cyan);
-  --card-accent-glow: rgba(6, 182, 212, 0.25);
-  --card-accent-border: rgba(6, 182, 212, 0.45);
-  --card-pattern-opacity: 0.04;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(21, 94, 117, 0.2));
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  --card-accent-glow: rgba(6, 182, 212, 0.3);
+  --card-accent-border: rgba(6, 182, 212, 0.55);
+  --card-pattern-opacity: 0.05;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.16), rgba(21, 94, 117, 0.3));
+  border: 1px solid rgba(6, 182, 212, 0.4);
 }
 .project-card.sumersend:hover {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(21, 94, 117, 0.4));
-  border-color: rgba(6, 182, 212, 0.65);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.28), rgba(21, 94, 117, 0.55));
+  border-color: rgba(6, 182, 212, 0.75);
   box-shadow: 
-    0 15px 40px rgba(6, 182, 212, 0.35), 
-    0 0 25px rgba(6, 182, 212, 0.2),
-    inset 0 0 15px rgba(6, 182, 212, 0.15);
+    0 15px 40px rgba(6, 182, 212, 0.4), 
+    0 0 25px rgba(6, 182, 212, 0.25),
+    inset 0 0 15px rgba(6, 182, 212, 0.2);
+}
+.project-card.sumersend .card-icon-container {
+  color: var(--accent-cyan);
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(6, 182, 212, 0.1);
+}
+.project-card.sumersend .tech-tag {
+  background: rgba(6, 182, 212, 0.08);
+  border-color: rgba(6, 182, 212, 0.25);
+  color: #c5f2f7;
 }
 
 .project-card.bank {
   --card-accent: var(--accent-purple);
-  --card-accent-glow: rgba(139, 92, 246, 0.25);
-  --card-accent-border: rgba(139, 92, 246, 0.45);
-  --card-pattern-opacity: 0.05;
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(88, 28, 135, 0.2));
-  border: 1px solid rgba(139, 92, 246, 0.3);
+  --card-accent-glow: rgba(139, 92, 246, 0.3);
+  --card-accent-border: rgba(139, 92, 246, 0.55);
+  --card-pattern-opacity: 0.06;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(88, 28, 135, 0.3));
+  border: 1px solid rgba(139, 92, 246, 0.4);
 }
 .project-card.bank:hover {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(88, 28, 135, 0.4));
-  border-color: rgba(139, 92, 246, 0.65);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.28), rgba(88, 28, 135, 0.55));
+  border-color: rgba(139, 92, 246, 0.75);
   box-shadow: 
-    0 15px 40px rgba(139, 92, 246, 0.35), 
-    0 0 25px rgba(139, 92, 246, 0.2),
-    inset 0 0 15px rgba(139, 92, 246, 0.15);
+    0 15px 40px rgba(139, 92, 246, 0.4), 
+    0 0 25px rgba(139, 92, 246, 0.25),
+    inset 0 0 15px rgba(139, 92, 246, 0.2);
+}
+.project-card.bank .card-icon-container {
+  color: var(--accent-purple);
+  border-color: rgba(139, 92, 246, 0.3);
+  background: rgba(139, 92, 246, 0.1);
+}
+.project-card.bank .tech-tag {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.25);
+  color: #ddd6fe;
 }
 
 .project-card.sufrah {
   --card-accent: var(--accent-amber);
-  --card-accent-glow: rgba(245, 158, 11, 0.25);
-  --card-accent-border: rgba(245, 158, 11, 0.45);
-  --card-pattern-opacity: 0.05;
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(146, 64, 14, 0.2));
-  border: 1px solid rgba(245, 158, 11, 0.3);
+  --card-accent-glow: rgba(245, 158, 11, 0.3);
+  --card-accent-border: rgba(245, 158, 11, 0.55);
+  --card-pattern-opacity: 0.06;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(146, 64, 14, 0.3));
+  border: 1px solid rgba(245, 158, 11, 0.4);
 }
 .project-card.sufrah:hover {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(146, 64, 14, 0.4));
-  border-color: rgba(245, 158, 11, 0.65);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.28), rgba(146, 64, 14, 0.55));
+  border-color: rgba(245, 158, 11, 0.75);
   box-shadow: 
-    0 15px 40px rgba(245, 158, 11, 0.35), 
-    0 0 25px rgba(245, 158, 11, 0.2),
-    inset 0 0 15px rgba(245, 158, 11, 0.15);
+    0 15px 40px rgba(245, 158, 11, 0.4), 
+    0 0 25px rgba(245, 158, 11, 0.25),
+    inset 0 0 15px rgba(245, 158, 11, 0.2);
+}
+.project-card.sufrah .card-icon-container {
+  color: var(--accent-amber);
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.1);
+}
+.project-card.sufrah .tech-tag {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fde68a;
 }
 
 /* Beautiful Premium Cards & Patterns */
@@ -448,9 +488,10 @@ p {
 }
 
 .project-card:hover .card-icon-container {
-  color: var(--card-accent);
-  border-color: var(--card-accent-border);
-  box-shadow: 0 0 15px var(--card-accent-glow);
+  background: var(--card-accent);
+  color: var(--bg-primary);
+  border-color: var(--card-accent);
+  box-shadow: 0 0 20px var(--card-accent-glow);
 }
 
 .card-links {
@@ -464,7 +505,7 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--bg-tertiary);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid var(--border-light);
   display: flex;
   align-items: center;
@@ -474,15 +515,22 @@ p {
 }
 
 .card-link-btn svg {
-  stroke: currentColor;
-  fill: none;
+  width: 18px !important;
+  height: 18px !important;
+  stroke: var(--text-primary) !important;
+  fill: none !important;
 }
 
 .card-link-btn:hover {
-  background: var(--bg-primary);
-  color: var(--card-accent);
-  border-color: var(--card-accent-border);
-  box-shadow: 0 0 10px var(--card-accent-glow);
+  background: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  border-color: var(--text-primary) !important;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4) !important;
+}
+
+.card-link-btn:hover svg {
+  stroke: var(--bg-primary) !important;
+  fill: none !important;
 }
 
 .card-link-btn:active {

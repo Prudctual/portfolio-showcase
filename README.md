@@ -1,32 +1,38 @@
-# React + TypeScript + Vite
+# ✨ Creator Showcase & Portfolio - Jasim Kareem
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A high-end, responsive, Vercel-inspired portfolio website showcasing production-grade projects:
+- **Agmoney**: Spend Limit Firewall for AI Agents.
+- **SumerSend**: Transactional Zain Cash & WhatsApp Automation.
+- **Bank of Agents**: Neobank for AI Agents.
+- **Sufrah**: Local food-delivery marketplace.
 
-Currently, two official plugins are available:
+Features a sleek dark mode, interactive glassmorphic header, card hover spotlight effects, and detailed case study modals for each project.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tech Stack
+- **Framework**: Vite + React + TypeScript
+- **Styling**: Vanilla CSS (Vercel-inspired dark theme)
+- **Icons**: Lucide React + custom SVGs
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the Oxlint configuration
+## 🚀 How to Deploy on Vercel with your Subdomain
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+1. **Push & Import**:
+   - The repository is already public at [github.com/Prudctual/portfolio-showcase](https://github.com/Prudctual/portfolio-showcase).
+   - Go to your Vercel Dashboard, click **Add New** -> **Project**, and import `portfolio-showcase`.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+2. **Custom Domain**:
+   - In Vercel, navigate to **Settings** -> **Domains**.
+   - Add your custom subdomain: `portfolio.aiandthings.tech` (or `showcase.aiandthings.tech`).
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+3. **DNS Setup**:
+   - Log in to your domain registrar (e.g. where `aiandthings.tech` is managed).
+   - Add a new **CNAME** record:
+     - **Host/Name**: `portfolio` (or `showcase`)
+     - **Value/Target**: `cname.vercel-dns.com`
+     - **TTL**: Automatic / 3600
+
+4. **Verify**:
+   - Vercel will automatically obtain an SSL certificate. Once the DNS propagates, your portfolio will be live at `https://portfolio.aiandthings.tech`!

@@ -209,8 +209,10 @@ export default function App() {
             <div className="walking-cat">
               <svg viewBox="0 0 32 24" className="cat-svg">
                 {/* Tail (Smooth S-curve) */}
-                <path d="M 6,12.5 C 4,12.5 1.5,9.5 2,5.5 C 2.3,3.5 3.3,3.5 3,5.5 C 2.5,7.8 3.5,10.8 6,10.8 Z" fill="#f97316" className="cat-tail" />
-                <path d="M 5.8,11.5 C 4.3,11.5 2,9.2 2.5,6.5 C 2.8,5.2 3.3,5.2 3,6.2 C 2.5,8 3.5,9.8 5.8,9.8 Z" fill="#ea580c" className="cat-tail-stripe" />
+                <g className="cat-tail-group">
+                  <path d="M 6,12.5 C 4,12.5 1.5,9.5 2,5.5 C 2.3,3.5 3.3,3.5 3,5.5 C 2.5,7.8 3.5,10.8 6,10.8 Z" fill="#f97316" />
+                  <path d="M 5.8,11.5 C 4.3,11.5 2,9.2 2.5,6.5 C 2.8,5.2 3.3,5.2 3,6.2 C 2.5,8 3.5,9.8 5.8,9.8 Z" fill="#ea580c" />
+                </g>
 
                 {/* Back Left Leg (Inner, Darker Ginger) */}
                 <g className="cat-leg cat-leg-back-inner">

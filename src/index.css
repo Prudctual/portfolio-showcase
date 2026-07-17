@@ -217,8 +217,8 @@ p {
 .walking-cat {
   position: absolute;
   bottom: -4px; /* Walks on the header bottom border line */
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 27px;
   color: var(--accent-cyan);
   animation: cat-patrol 18s infinite linear;
 }
@@ -250,8 +250,8 @@ p {
 }
 
 /* Independent Tail wiggle animation */
-.walking-cat .cat-tail {
-  transform-origin: 5px 12px;
+.walking-cat .cat-tail-group {
+  transform-origin: 6px 12.5px;
   animation: tail-wiggle-cycle 18s infinite ease-in-out;
 }
 

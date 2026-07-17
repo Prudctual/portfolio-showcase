@@ -203,10 +203,6 @@ export default function App() {
           <a href="#" className="logo">
             ai & things <span className="logo-accent">// showcase</span>
           </a>
-          <div className="status-pill">
-            <span className="status-dot" />
-            SYSTEMS_OPERATIONAL
-          </div>
         </div>
       </header>
 
